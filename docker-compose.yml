@@ -1,0 +1,6 @@
+version: '2'
+services:
+  tsc:
+    image: jare/typescript
+    volumes:
+      - .:/home/developer/workspace

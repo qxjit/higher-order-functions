@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+TS_FILE=$1
+JS_FILE="$(basename $1 .ts).js"
+
+tsc $1 --outdir build
+node build/$JS_FILE
