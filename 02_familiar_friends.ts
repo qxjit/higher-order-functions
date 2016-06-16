@@ -5,34 +5,14 @@
 //
 let map
   : <T,U> (ts: Array<T>, f: (T) => U) => Array<U>
-  = (ts, f) => {
-    let us = [];
-
-    for (let i = 0; i < ts.length; i++) {
-      us.push(f(ts[i]));
-    }
-
-    return us;
-  }
-
-console.log(map(["hello", "goodbye"], s => s.length));
+  = undefined;
 
 // And our own version of reduce
 //
 let reduce
   : <T,U> (ts: Array<T>, init: U, step: (U,T) => U)
   => U
-  = (ts, init, step) => {
-    let u = init;
-
-    for (let i = 0; i < ts.length; i++) {
-      u = step(u, ts[i]);
-    }
-
-    return u;
-  }
-
-console.log(reduce([1,2,3], 0, (a, b) => a + b));
+  = undefined;
 
 // Promise.then is a higher order function too!
 //
@@ -68,8 +48,4 @@ class Promise<T> {
   }
 }
 
-new Promise((fulfill) => {
-  setTimeout(() => fulfill('done'), 3000);
-}).then(s => Promise.accept(s.length))
-  .then(console.log);
 

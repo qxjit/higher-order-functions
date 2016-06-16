@@ -16,8 +16,6 @@ let multiplyA
   = (x, y) => x * y
 
 
-console.log([1,2,3].map((x) => multiplyA(2,x)))
-
 // The curried version of the function allows the
 // first parameter to be specified and returns
 // a function that can then be passed directly to
@@ -25,9 +23,7 @@ console.log([1,2,3].map((x) => multiplyA(2,x)))
 //
 let multiplyB
   : (number) => (number) => number
-  = x => y => x * y
-
-console.log([1,2,3].map(multiplyB(2)))
+  = undefined;
 
 // Sometimes arguments aren't in the right order.
 //
@@ -35,15 +31,10 @@ let repeat
   : <A> (number) => (A) => Array<A>
   = count => item => Array.apply(null, Array(count)).map(() => item)
 
-console.log(repeat(2)("Hello"))
-console.log([2,3,4].map((count) => repeat(count)("Malkovich")))
-
 // But we can build a high order function to that allows us
 // to rearrange the parameter list.
 //
 let flip
-  : <A,B,C>(f: (A) => (B) => C) => (B) => (A) => C
-  = f => a => b => f(b)(a)
-
-console.log([2,3,4].map(flip(repeat)("Malkovich")))
+  : any
+  = undefined
 

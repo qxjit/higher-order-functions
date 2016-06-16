@@ -9,14 +9,7 @@
 //
 let converse
   : (message : String, callback : () => void) => void
-  = (message, callback) => {
-    console.log(message);
-    callback();
-  }
-
-converse('hello', () => {
-  console.log('goodbye');
-});
+  = undefined
 
 // A function that returns a function is sometimes used
 // to capture configuration options for the fuction being
@@ -24,13 +17,5 @@ converse('hello', () => {
 //
 let makeGreeter
   : (String) => ((String) => String)
-  = (greeting) => {
-      return (name) => {
-        return `${greeting}, ${name}`;
-      }
-    }
-
-let greeter = makeGreeter("hello");
-console.log(greeter("Sally"));
-console.log(greeter("Bob"));
+  = undefined
 

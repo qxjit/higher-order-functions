@@ -15,28 +15,23 @@ let scopeExample = () => {
   console.log(`scopeExample: w = ${w}`);
 }
 
-scopeExample();
-
 // The value of `this`, however behaves somewhat strangely
 //
 function topFunction () { console.log('topFunction:', this); }
+
 let topArrow = () => { console.log('topArrow:', this); }
 
 let obj = {
   propFunction: function () { console.log('propFunction', this); },
+
   propArrow: () => { console.log('propArrow', this); },
+
   callbackFunction: function () {
     setTimeout(function () { console.log('callbackFunction', this); }, 0);
   },
+
   callbackArrow: function () {
     setTimeout(() => { console.log('callbackArrow', this); }, 0);
   }
 }
-
-topFunction();
-topArrow();
-obj.propFunction();
-obj.propArrow();
-obj.callbackFunction();
-obj.callbackArrow();
 
